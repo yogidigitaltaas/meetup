@@ -33,7 +33,7 @@ const authCheck = jwt({
 });
 
 app.post('/api/meetups', MeetupController.create);
-app.get('/api/meetups/public', MeetupController.getPublicMeetups);
+app.get('/api/meetups/publicV2', MeetupController.getPublicMeetups);
 app.get('/api/meetups/private', authCheck, MeetupController.getPrivateMeetups);
 
 app.listen(3333);
