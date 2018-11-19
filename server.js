@@ -43,5 +43,5 @@ mongoose.connect(MongoDBUrl, {}).then(() => { console.log(`Connected to Mongo se
 
 
 app.get('/', (req, res) => {
-    return res.json({ message: "Welcome to the Meetups API 123" });
+    return res.json({ message: "Welcome to the AMAT API" });
 });
