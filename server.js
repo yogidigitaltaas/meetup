@@ -40,3 +40,8 @@ app.listen(3333);
 console.log('Listening on localhost:3333');
  // Once started, connect to Mongo through Mongoose
 mongoose.connect(MongoDBUrl, {}).then(() => { console.log(`Connected to Mongo server`) }, err => { console.log(err) });
+
+
+app.get('/', (req, res) => {
+    return res.json({ message: "Welcome to the Meetups API" });
+});
