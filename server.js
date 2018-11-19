@@ -11,7 +11,7 @@ const MeetupController =  require('./src/controllers/meetup');
 const config = require('./config.js'); // remove .example from /server/config.js.example
 //const MongoDBUrl = 'mongodb://localhost:27017/meetupapi';
 //const MongoDBUrl = 'mongodb://unicodeveloper:pote1142@ds235827.mlab.com:35827/meetup';
-const MongoDBUrl = 'mongodb://rawat_yog_04:Mobiware123#@cluster0-shard-00-00-s85dc.mongodb.net:27017,cluster0-shard-00-01-s85dc.mongodb.net:27017,cluster0-shard-00-02-s85dc.mongodb.net:27017/meetup?ssl=true&replicaSet=Cluster0-shard-0&authSource=admin&retryWrites=true';
+const MongoDBUrl = 'mongodb://rawat_yog_04:mobiware123@cluster0-shard-00-00-s85dc.mongodb.net:27017,cluster0-shard-00-01-s85dc.mongodb.net:27017,cluster0-shard-00-02-s85dc.mongodb.net:27017/meetup?ssl=true&replicaSet=Cluster0-shard-0&authSource=admin&retryWrites=true';
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
