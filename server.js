@@ -32,16 +32,19 @@ const authCheck = jwt({
     algorithms: ['RS256']
 });
 
-app.post('/api/meetups', MeetupController.create);
-app.get('/api/meetups/publicV2', MeetupController.getPublicMeetups);
-app.get('/api/meetups/private', authCheck, MeetupController.getPrivateMeetups);
-
-app.listen(process.env.PORT || 3333);
-console.log('Listening on localhost:3333');
- // Once started, connect to Mongo through Mongoose
-mongoose.connect(MongoDBUrl, {}).then(() => { console.log(`Connected to Mongo server`) }, err => { console.log(err) });
-
 
 app.get('/', (req, res) => {
     return res.json({ message: "Welcome to the AMAT API" });
 });
+app.post('/api/meetups', MeetupController.create);
+app.get('/api/meetups/public', MeetupController.getPublicMeetups);
+app.get('/api/meetups/private', authCheck, MeetupController.getPrivateMeetups);
+
+var port = process.env.PORT || 3333;
+app.listen(port);
+console.log('Listening on port ' + port);
+ // Once started, connect to Mongo through Mongoose
+mongoose.connect(MongoDBUrl, {}).then(() => { console.log(`Connected to Mongo server`) }, err => { console.log(err) });
+
+
+
