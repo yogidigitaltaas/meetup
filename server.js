@@ -40,7 +40,7 @@ app.post('/api/meetups', MeetupController.create);
 app.get('/api/meetups/public', MeetupController.getPublicMeetups);
 app.get('/api/meetups/private', authCheck, MeetupController.getPrivateMeetups);
 
-var port = process.env.PORT || 3333;
+var port = process.env.PORT || 8080;
 app.listen(port);
 console.log('Listening on port ' + port);
  // Once started, connect to Mongo through Mongoose
